@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: app
+  profiles:
+    active: dev
+  datasource:
+    hikari:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          jdbc-url: jdbc:mysql://127.0.0.1:3306/dd_dev?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+          username: root
+          password: root
+  data:
+    redis:
+          host: http://127.0.0.1
+          port: 6379
+          database: 01
+          ssl:
+            enabled: true
+server:
+  port: 9100
+
+logging:
+  file:
+    path: ~/dev/logs

@@ -3,6 +3,7 @@
 
 # Log file
 *.log
+**/application-dev.yaml
 
 # BlueJ files
 *.ctxt
