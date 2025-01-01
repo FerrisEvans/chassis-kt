@@ -12,7 +12,6 @@
     <groupId>cn.dd</groupId>
     <artifactId>dependencies</artifactId>
     <version>1.0</version>
-    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
 
     <properties>
@@ -43,7 +42,7 @@
             </dependency>
             <dependency>
                 <groupId>org.ktorm</groupId>
-                <artifactId>ktorm-support-jackson</artifactId>
+                <artifactId>ktorm-jackson</artifactId>
                 <version>${ktorm.version}</version>
             </dependency>
             <dependency>

@@ -20,6 +20,7 @@
     <modules>
         <module>app</module>
         <module>sys</module>
+        <module>common</module>
     </modules>
 
     <dependencyManagement>
@@ -27,6 +28,11 @@
             <dependency>
                 <groupId>cn.dd</groupId>
                 <artifactId>app</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dd</groupId>
+                <artifactId>common</artifactId>
                 <version>${app.version}</version>
             </dependency>
             <dependency>

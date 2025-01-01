@@ -65,6 +65,7 @@
         <root level="info">
             <appender-ref ref="console"/>
         </root>
+        <logger name="cn.dd" level="DEBUG" />
         <logger name="org.springframework.web" level="INFO"/>
         <logger name="org.springboot.sample" level="INFO" />
         <logger name="java.sql.Statement" level="DEBUG"/>
@@ -73,6 +74,7 @@
         <logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG"/>
         <logger name="org.springframework.jdbc.core.StatementCreatorUtils" level="DEBUG"/>
         <logger name="org.jasypt" level="DEBUG" />
+        <logger name="ch.qos.logback" level="ERROR" />
     </springProfile>
 
 </configuration>

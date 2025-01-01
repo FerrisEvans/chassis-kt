@@ -1,4 +1,4 @@
-package cn.dd.app.web
+package cn.dd.web
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
@@ -12,18 +12,18 @@ import javax.sql.DataSource
 
 @Configuration
 @EnableTransactionManagement
-class DatasourceConfig {
+open class DatasourceConfig {
 
     @Bean
     @Primary
     @ConfigurationProperties(prefix = "spring.datasource.hikari")
-    fun hikariConfig(): HikariConfig {
+    open fun hikariConfig(): HikariConfig {
         return HikariConfig()
     }
 
     @Bean
     @ConditionalOnClass(HikariConfig::class)
-    fun dataSource(hikariConfig: HikariConfig): DataSource {
+    open fun dataSource(hikariConfig: HikariConfig): DataSource {
         return HikariDataSource(hikariConfig)
     }
 
