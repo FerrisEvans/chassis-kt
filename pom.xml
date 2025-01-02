@@ -12,7 +12,13 @@
     <name>${project.artifactId}</name>
     <version>1.0</version>
     <packaging>pom</packaging>
-
+    <developers>
+        <developer>
+            <name>Ferris</name>
+            <email>ferris.evans@outlook.com</email>
+            <url>https://ferrisevans.github.io</url>
+        </developer>
+    </developers>
     <properties>
         <app.version>1.0</app.version>
     </properties>
