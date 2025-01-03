@@ -4,6 +4,7 @@
 # Log file
 *.log
 **/application-dev.yaml
+design/
 
 # BlueJ files
 *.ctxt
