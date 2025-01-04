@@ -17,6 +17,10 @@ data class R<T>(
             return R(true, null, HttpStatus.INTERNAL_SERVER_ERROR.reasonPhrase, HttpStatus.INTERNAL_SERVER_ERROR.value())
         }
 
+        fun <T> notFound(): R<T> {
+            return R(false, null, HttpStatus.NOT_FOUND.reasonPhrase, HttpStatus.NOT_FOUND.value())
+        }
+
         fun <T> notFound(obj: Any): R<T> {
             return R(false, null, obj.toString() + " " + HttpStatus.NOT_FOUND.reasonPhrase, HttpStatus.NOT_FOUND.value())
         }
