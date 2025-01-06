@@ -1,4 +1,4 @@
-package cn.dd.common.exception
+package cn.dd.common.dict
 
 import org.springframework.http.HttpStatus
 
