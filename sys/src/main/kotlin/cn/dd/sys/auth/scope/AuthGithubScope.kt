@@ -1,6 +1,6 @@
 package cn.dd.sys.auth.scope
 
-enum class AuthGithubScope (val scope: String, val desc: String, val default: Boolean): AuthScope {
+enum class AuthGithubScope (private val scope: String, val desc: String, private val default: Boolean): AuthScope {
     REPO_STATUS("repo:status", "Grants read/write access to public and private repository commit statuses. This scope is only necessary to grant other users or services access to private repository commit statuses <em>without</em> granting access to the code.", false),
     REPO_DEPLOYMENT("repo_deployment", "Grants access to deployment statuses for public and private repositories. This scope is only necessary to grant other users or services access to deployment statuses, <em>without</em> granting access to the code.", false),
     PUBLIC_REPO("public_repo", "Limits access to public repositories. That includes read/write access to code, commit statuses, repository projects, collaborators, and deployment statuses for public repositories and organizations. Also required for starring public repositories.", false),

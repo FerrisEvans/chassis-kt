@@ -5,7 +5,7 @@ package cn.dd.sys.auth.scope
  *
  * https://open.douyin.com/platform/doc/6855240178122983437
  */
-enum class AuthDouyinScope(val scope: String, val desc: String, val default: Boolean): AuthScope {
+enum class AuthDouyinScope(private val scope: String, val desc: String, private val default: Boolean): AuthScope {
     /**
      * 无需申请	默认开启
      */

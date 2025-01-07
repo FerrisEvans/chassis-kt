@@ -3,7 +3,7 @@ package cn.dd.sys.auth.scope
 /**
  * 微信公众平台 OAuth 授权范围
  */
-enum class AuthWechatMpScope(val scope: String, val desc: String, val default: Boolean) : AuthScope {
+enum class AuthWechatMpScope(private val scope: String, val desc: String, private val default: Boolean) : AuthScope {
 
     SNSAPI_USERINFO(
         "snsapi_userinfo",

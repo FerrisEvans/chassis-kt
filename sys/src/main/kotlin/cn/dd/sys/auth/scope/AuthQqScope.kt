@@ -1,6 +1,6 @@
 package cn.dd.sys.auth.scope
 
-enum class AuthQqScope (val scope: String, val desc: String, val default: Boolean): AuthScope {
+enum class AuthQqScope (private val scope: String, val desc: String, private val default: Boolean): AuthScope {
     GET_USER_INFO("get_user_info", "获取登录用户的昵称、头像、性别", true),
     /**
      * 以下 scope 需要申请：http://wiki.connect.qq.com/openapi%e6%9d%83%e9%99%90%e7%94%b3%e8%af%b7

@@ -1,6 +1,6 @@
 package cn.dd.sys.auth.scope
 
-enum class AuthGiteeScope (val scope: String, val desc: String, val default: Boolean): AuthScope {
+enum class AuthGiteeScope (private val scope: String, val desc: String, private val default: Boolean): AuthScope {
     USER_INFO("user_info", "访问用户的个人信息、最新动态等", true),
     PROJECTS("projects", "查看、创建、更新用户的项目", false),
     PULL_REQUESTS("pull_requests", "查看、发布、更新用户的 Pull Request", false),
