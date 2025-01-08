@@ -25,6 +25,9 @@
         <mysql.version>8.4.0</mysql.version>
         <ktorm.version>4.1.1</ktorm.version>
         <apm.logback.version>8.8.0</apm.logback.version>
+        <!-- auth sso -->
+        <alipay.version>4.40.30.ALL</alipay.version>
+
     </properties>
 
     <dependencyManagement>
@@ -55,6 +58,19 @@
                 <groupId>org.apache.skywalking</groupId>
                 <artifactId>apm-toolkit-logback-1.x</artifactId>
                 <version>${apm.logback.version}</version>
+            </dependency>
+            <!-- auth sso -->
+            <dependency>
+                <groupId>com.alipay.sdk</groupId>
+                <artifactId>alipay-sdk-java</artifactId>
+                <version>${alipay.version}</version>
+                <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>fastjson</artifactId>
+                        <groupId>com.alibaba</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
         </dependencies>
     </dependencyManagement>
