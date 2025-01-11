@@ -2,36 +2,46 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
-
 [versions]
-#Include all versions here
 kotlin = "2.1.0"
+ksp = "2.1.0-1.0.29"
 kotlinx-coroutines = "1.8.1"
+kotlinxDatetime = "0.6.1"
+kotlinxSerializationJSON = "1.7.2"
 springboot = "3.4.1"
-#kotlinxDatetime = "0.6.1"
-#kotlinxSerializationJSON = "1.7.2"
+springcloud = "2023.0.0"
+springcloud-adlibaba = "2023.0.1.2"
+mysql = "8.4.0"
+ktorm = "4.1.1"
+apm-logback = "8.8.0"
 
 [libraries]
-#Define all libraries here
-kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
-kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinReflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+kotlinxCoroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
+kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
-springBootBom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springboot"}
+logback = { module = "org.apache.skywalking:apm-toolkit-logback-1.x", version.ref = "apm-logback"}
 
-
-#kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
-#kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
-
+starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "springboot" }
+autoconfigure = { group = "org.springframework.boot", name = "spring-boot-autoconfigure", version.ref = "springboot" }
+starter-redis = { group = "org.springframework.boot", name = "spring-boot-starter-data-redis", version.ref = "springboot" }
+starter-jdbc = { group = "org.springframework.boot", name = "spring-boot-starter-jdbc", version.ref = "springboot" }
+starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "springboot" }
+ktormCore = { group = "org.ktorm", name = "ktorm-core", version.ref = "ktorm" }
+ktormJackson = { group = "org.ktorm", name = "ktorm-jackson", version.ref = "ktorm" }
+ktormMysql = { group = "org.ktorm", name = "ktorm-support-mysql", version.ref = "ktorm" }
+# ktormKsp = {{ group = "org.ktorm", name = "ktorm-ksp-compiler", version.ref = "ktorm" }
+mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql"}
 
 # Libraries can be bundled together for easier import
 [bundles]
-#kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
-
+kotlinxEcosystem = ["kotlinReflect", "kotlinxDatetime", "kotlinxCoroutines", "kotlinxSerialization"]
+springbootStarter = ["starter-web", "autoconfigure", "logback"]
+jdbc = ["starter-jdbc", "starter-redis", "ktormCore", "ktormJackson", "ktormMysql", "mysql"]
+test = ["starter-test"]
 
 [plugins]
-#Include all plugins here
-#kotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
-springBoot = { id = "org.springframework.boot", version.ref = "springboot"}

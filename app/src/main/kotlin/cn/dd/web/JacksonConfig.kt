@@ -14,13 +14,13 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder
 import java.text.SimpleDateFormat
 
 @Configuration
-class JacksonConfig {
-    fun ktormModule(): Module {
+open class JacksonConfig {
+    private fun ktormModule(): Module {
         return KtormModule()
     }
 
     @Bean
-    fun jacksonObjectMapper(builder: Jackson2ObjectMapperBuilder): ObjectMapper {
+    open fun jacksonObjectMapper(builder: Jackson2ObjectMapperBuilder): ObjectMapper {
         val module = SimpleModule().apply {
             addSerializer(Long::class.javaObjectType, ToStringSerializer.instance)
             addSerializer(Long::class.javaPrimitiveType, ToStringSerializer.instance)

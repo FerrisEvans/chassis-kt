@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AppApplication
+open class AppApplication
 
 val log: Logger = LoggerFactory.getLogger(AppApplication::class.java)
 

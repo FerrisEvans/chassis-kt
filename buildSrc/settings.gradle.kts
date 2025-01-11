@@ -5,6 +5,7 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
         google()
+        gradlePluginPortal()
     }
 
     // Reuse the version catalog from the main build.

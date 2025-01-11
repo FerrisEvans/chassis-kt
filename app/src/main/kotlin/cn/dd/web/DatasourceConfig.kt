@@ -13,24 +13,24 @@ import javax.sql.DataSource
 
 @Configuration
 @EnableTransactionManagement
-class DatasourceConfig {
+open class DatasourceConfig {
 
     @Bean
     @Primary
     @ConfigurationProperties(prefix = "spring.datasource.hikari")
-    fun hikariConfig(): HikariConfig {
+    open fun hikariConfig(): HikariConfig {
         return HikariConfig()
     }
 
     @Bean
     @ConditionalOnClass(HikariConfig::class)
-    fun dataSource(hikariConfig: HikariConfig): DataSource {
+    open fun dataSource(hikariConfig: HikariConfig): DataSource {
         return HikariDataSource(hikariConfig)
     }
 
     @Bean
     @ConditionalOnClass(DataSource::class)
-    fun database(dataSource : DataSource): Database {
+    open fun database(dataSource : DataSource): Database {
         return Database.connectWithSpringSupport(dataSource)
     }
 
