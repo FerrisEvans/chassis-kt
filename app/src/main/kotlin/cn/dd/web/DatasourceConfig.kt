@@ -3,7 +3,6 @@ package cn.dd.web
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import org.ktorm.database.Database
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Bean
@@ -15,8 +14,6 @@ import javax.sql.DataSource
 @Configuration
 @EnableTransactionManagement
 class DatasourceConfig {
-    @Autowired
-    lateinit var dataSource: DataSource
 
     @Bean
     @Primary
@@ -33,7 +30,7 @@ class DatasourceConfig {
 
     @Bean
     @ConditionalOnClass(DataSource::class)
-    fun database(): Database {
+    fun database(dataSource : DataSource): Database {
         return Database.connectWithSpringSupport(dataSource)
     }
 

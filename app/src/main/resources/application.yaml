@@ -1,3 +1,6 @@
+server:
+  port: 9100
+
 spring:
   application:
     name: app
@@ -5,19 +8,22 @@ spring:
     active: dev
   datasource:
     hikari:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          jdbc-url: jdbc:mysql://127.0.0.1:3306/dd_dev?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
-          username: root
-          password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/dd_dev?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+      username: root
+      password: root
+      connection-timeout: 60000
+      minimum-idle: 1
+      maximum-pool-size: 10
+      pool-name: default-hikari
+      connection-test-query: SELECT 1 FROM dual
   data:
     redis:
-          host: http://127.0.0.1
-          port: 6379
-          database: 01
-          ssl:
-            enabled: true
-server:
-  port: 9100
+      host: http://127.0.0.1
+      port: 6379
+      database: 01
+      ssl:
+        enabled: true
 
 logging:
   file:

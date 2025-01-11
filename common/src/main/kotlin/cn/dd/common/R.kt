@@ -9,7 +9,7 @@ data class R<T>(
     val code: Int
 ) {
     companion object {
-        fun <T> ok(data: T): R<T> {
+        fun <T> success(data: T): R<T> {
             return R(true, data, HttpStatus.OK.reasonPhrase, HttpStatus.OK.value())
         }
 
