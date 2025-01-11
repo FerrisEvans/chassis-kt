@@ -1,5 +1,6 @@
 package cn.dd.sys.rbac
 
+//@Table("sys_user")
 data class User(
     val username: String,
     val password: String,
