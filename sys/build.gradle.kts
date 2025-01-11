@@ -1,4 +1,5 @@
 plugins {
+    alias(libs.plugins.ksp)
     id("buildsrc.convention.kotlin-jvm")
     alias(libs.plugins.kotlinPluginSerialization)
 }

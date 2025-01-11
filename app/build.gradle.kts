@@ -10,6 +10,7 @@ dependencies {
     implementation(libs.bundles.kotlinxEcosystem)
     implementation(libs.bundles.springbootStarter)
     implementation(libs.bundles.jdbc)
+    implementation(libs.starter.actuator)
     testImplementation(libs.bundles.test)
 }
 
