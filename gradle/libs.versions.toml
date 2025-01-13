@@ -3,10 +3,8 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-#kotlin = "2.1.0"
-#ksp = "2.1.0-1.0.29"
-kotlin = "1.9.23"
-ksp = "1.9.23-1.0.20"
+kotlin = "2.1.0" # kotlin = "1.9.23"
+ksp = "2.1.0-1.0.29" # ksp = "1.9.23-1.0.20"
 kotlinx-coroutines = "1.8.1"
 kotlinxDatetime = "0.6.1"
 kotlinxSerializationJSON = "1.7.2"
@@ -25,7 +23,6 @@ kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-j
 kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 logback = { module = "org.apache.skywalking:apm-toolkit-logback-1.x", version.ref = "apm-logback" }
-slf4j = { module = "org.slf4j:slf4j-api", version = "2.0.16"}
 starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "springboot" }
 autoconfigure = { group = "org.springframework.boot", name = "spring-boot-autoconfigure", version.ref = "springboot" }
 starter-redis = { group = "org.springframework.boot", name = "spring-boot-starter-data-redis", version.ref = "springboot" }
